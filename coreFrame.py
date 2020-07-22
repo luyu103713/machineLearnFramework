@@ -173,7 +173,7 @@ class classifierFramework:
                 self.eva_function_list.append('auc')
                 self.has_evaluation_function = True
 
-    def fitModel(self):
+    def fitModel(self,feature_list = ''):
         if self.has_train_set and self.has_model_type:
             print('## start fit the model! ##')
             
@@ -222,7 +222,7 @@ class classifierFramework:
                 result = self.__eva_func_compute(func,real_label,pred_label,pred_score)
                 evaluation_dict[func] = result
         return evaluation_dict   
-    def testModel(self,testX,test_label):
+    def testModel(self,testX,test_label,feature_list = ''):
         print('## start fit the model! ##')
         #random forest sklearn
             ##############
